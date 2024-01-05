@@ -26,27 +26,27 @@ struct ContentView: View {
                         Image("d4")
                             .resizable()
                             .frame(width: 75, height: 75)
-                            .onTapGesture { currentDie = "d4" }
+                            .onTapGesture { onDieChosen("d4") }
                         Image("d6")
                             .resizable()
                             .frame(width: 75, height: 75)
-                            .onTapGesture { currentDie = "d6" }
+                            .onTapGesture { onDieChosen("d6") }
                         Image("d8")
                             .resizable()
                             .frame(width: 75, height: 75)
-                            .onTapGesture { currentDie = "d8" }
+                            .onTapGesture { onDieChosen("d8") }
                         Image("d10")
                             .resizable()
                             .frame(width: 75, height: 75)
-                            .onTapGesture { currentDie = "d10" }
+                            .onTapGesture { onDieChosen("d10") }
                         Image("d12")
                             .resizable()
                             .frame(width: 75, height: 75)
-                            .onTapGesture { currentDie = "d12" }
+                            .onTapGesture { onDieChosen("d12") }
                         Image("d20")
                             .resizable()
                             .frame(width: 75, height: 75)
-                            .onTapGesture { currentDie = "d20" }
+                            .onTapGesture { onDieChosen("d20")}
                     }
                     Spacer()
                 }
@@ -81,9 +81,10 @@ struct ContentView: View {
         }  //ZStack
     }
     
-    private func onDieChosen(newDie: String) {
+    private func onDieChosen(_ newDie: String) {
         currentDie = newDie
         currentNumber = dice[newDie] ?? 0
+       // print(currentNumber)
     }
     private func increase() {
         if currentNumber<10 {
@@ -98,8 +99,21 @@ struct ContentView: View {
         }
     }
     private func rollDice() {
+       
         for (dieType, dieNumber) in dice {
            // print("\(dieType) 0=> \(dieNumber)")
+            let dieValue = Int(dieType.dropFirst(1)) ?? 0
+            var i = 0
+           
+            while i<dieNumber {
+               roll[i] = Int.random(in: 1...dieValue)
+                print (roll[i])
+               
+                i += 1
+            }
+                
+            }
+            // print("\(dieType) 0=> \(dieNumber)")
             
         }
         //var i = 0
@@ -109,7 +123,7 @@ struct ContentView: View {
         //}
         //print (roll[0...numberOfDice-1])
     }
-}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
