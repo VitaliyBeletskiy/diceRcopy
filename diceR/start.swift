@@ -10,12 +10,30 @@ import SwiftUI
 
 struct StartView: View {
     var body: some View {
-        Text("11")
+        NavigationView{
+            ZStack {
+                Image ("kosti")
+                    .edgesIgnoringSafeArea(.all)
+                VStack{
+                    Text("wellcome")
+                        .padding()
+                        .font(.largeTitle)
+                    Text("to DiceRoller")
+                        .padding()
+                        .font(.title)
+                    Spacer()
+                    NavigationLink {ContentView().navigationBarBackButtonHidden(true)} label: {
+                        Text("start")
+                            .font(.largeTitle)
+                    }
+                }}
+        
+        }
     }
-    
 }
+
         struct StartView_Previews: PreviewProvider {
             static var previews: some View {
-                ContentView()
+                StartView()
             }
         }

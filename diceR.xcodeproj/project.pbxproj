@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F7D3CB42B52044700DBC00D /* ResultField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7D3CB32B52044700DBC00D /* ResultField.swift */; };
+		0F7D3CB62B545D2600DBC00D /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7D3CB52B545D2600DBC00D /* ViewExtensions.swift */; };
 		0F7F0AA62B44AEFC0052E8AB /* diceRApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7F0AA52B44AEFC0052E8AB /* diceRApp.swift */; };
 		0F7F0AA82B44AEFC0052E8AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7F0AA72B44AEFC0052E8AB /* ContentView.swift */; };
 		0F7F0AAA2B44AEFE0052E8AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F7F0AA92B44AEFE0052E8AB /* Assets.xcassets */; };
@@ -18,9 +20,12 @@
 		0F7F0ABC2B44AF5F0052E8AB /* d12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0F7F0ABB2B44AF5F0052E8AB /* d12.jpg */; };
 		0F7F0ABE2B44AF660052E8AB /* d20.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0F7F0ABD2B44AF660052E8AB /* d20.jpg */; };
 		0F7F0AC02B4797930052E8AB /* start.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7F0ABF2B4797930052E8AB /* start.swift */; };
+		0FA8E2342B4C802E00F638CA /* kosti.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0FA8E2332B4C802E00F638CA /* kosti.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F7D3CB32B52044700DBC00D /* ResultField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultField.swift; sourceTree = "<group>"; };
+		0F7D3CB52B545D2600DBC00D /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		0F7F0AA22B44AEFC0052E8AB /* diceR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = diceR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F7F0AA52B44AEFC0052E8AB /* diceRApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = diceRApp.swift; sourceTree = "<group>"; };
 		0F7F0AA72B44AEFC0052E8AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -33,6 +38,7 @@
 		0F7F0ABB2B44AF5F0052E8AB /* d12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = d12.jpg; sourceTree = "<group>"; };
 		0F7F0ABD2B44AF660052E8AB /* d20.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = d20.jpg; sourceTree = "<group>"; };
 		0F7F0ABF2B4797930052E8AB /* start.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = start.swift; sourceTree = "<group>"; };
+		0FA8E2332B4C802E00F638CA /* kosti.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kosti.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,14 +72,17 @@
 			isa = PBXGroup;
 			children = (
 				0F7F0AA52B44AEFC0052E8AB /* diceRApp.swift */,
-				0F7F0ABF2B4797930052E8AB /* start.swift */,
 				0F7F0AB32B44AF3D0052E8AB /* d4.jpg */,
+				0FA8E2332B4C802E00F638CA /* kosti.jpeg */,
 				0F7F0AB52B44AF430052E8AB /* d6.jpg */,
 				0F7F0AB72B44AF490052E8AB /* d8.jpg */,
 				0F7F0AB92B44AF4F0052E8AB /* d10.jpg */,
 				0F7F0ABB2B44AF5F0052E8AB /* d12.jpg */,
 				0F7F0ABD2B44AF660052E8AB /* d20.jpg */,
+				0F7D3CB52B545D2600DBC00D /* ViewExtensions.swift */,
+				0F7F0ABF2B4797930052E8AB /* start.swift */,
 				0F7F0AA72B44AEFC0052E8AB /* ContentView.swift */,
+				0F7D3CB32B52044700DBC00D /* ResultField.swift */,
 				0F7F0AA92B44AEFE0052E8AB /* Assets.xcassets */,
 				0F7F0AAB2B44AEFE0052E8AB /* Preview Content */,
 			);
@@ -154,6 +163,7 @@
 				0F7F0AAA2B44AEFE0052E8AB /* Assets.xcassets in Resources */,
 				0F7F0AB62B44AF440052E8AB /* d6.jpg in Resources */,
 				0F7F0ABC2B44AF5F0052E8AB /* d12.jpg in Resources */,
+				0FA8E2342B4C802E00F638CA /* kosti.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +177,8 @@
 				0F7F0AA82B44AEFC0052E8AB /* ContentView.swift in Sources */,
 				0F7F0AA62B44AEFC0052E8AB /* diceRApp.swift in Sources */,
 				0F7F0AC02B4797930052E8AB /* start.swift in Sources */,
+				0F7D3CB62B545D2600DBC00D /* ViewExtensions.swift in Sources */,
+				0F7D3CB42B52044700DBC00D /* ResultField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
