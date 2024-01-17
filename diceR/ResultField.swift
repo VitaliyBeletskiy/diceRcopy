@@ -9,58 +9,66 @@ import Foundation
 import SwiftUI
 
 struct ResultFieldView: View {
-    @StateObject var vm = ViewModel()
-    @Environment(\.presentationMode) var presentationMode
+    @Binding var path: NavigationPath
+    @StateObject var vm: ViewModel
+    @State private var index = 0
 
     var body: some View {
-        NavigationView{
+        NavigationView {
             ZStack {
                 LinearGradient(colors: [.green, .white, .green], startPoint: .top, endPoint: .bottom)
                     .edgesIgnoringSafeArea(.all)
                 VStack {
+                    Text("\(index + 1)/\(vm.history.count)")
                     Spacer()
-                    HStack{
-                        Image("d4")
-                            .resizable()
-                            .frame(width: 75, height: 75)
-                        Text("some text")}
-                    HStack{
-                        Image("d6")
-                            .resizable()
-                            .frame(width: 75, height: 75)
-                        Text("some text") }
-                    HStack{
-                        Image("d8")
-                            .resizable()
-                            .frame(width: 75, height: 75)
-                        Text("some text") }
-                    HStack{
-                        Image("d10")
-                            .resizable()
-                            .frame(width: 75, height: 75)
-                        Text("some text") }
-                    HStack{
-                        Image("d12")
-                            .resizable()
-                            .frame(width: 75, height: 75)
-                        Text("some text")}
-                    HStack{
-                        Image("d20")
-                            .resizable()
-                            .frame(width: 75, height: 75)
-                        Text("some text")}
+                    DieRollResult(die: Die.d4, vm: vm, index: $index)
+                    DieRollResult(die: Die.d6, vm: vm, index: $index)
+                    DieRollResult(die: Die.d8, vm: vm, index: $index)
+                    DieRollResult(die: Die.d10, vm: vm, index: $index)
+                    DieRollResult(die: Die.d12, vm: vm, index: $index)
+                    DieRollResult(die: Die.d20, vm: vm, index: $index)
                     Spacer()
-                    Button("Back to roll") {
-                        presentationMode.wrappedValue.dismiss()
-                    }.font(.largeTitle)
-                   
+                    HStack {
+                        MyButton(text: "<") { decreaseIndex() }
+                        Spacer()
+                        MyButton(text: "back") { path.removeLast() }
+                        Spacer()
+                        MyButton(text: ">") { increaseIndex() }
+                    }
                 }
-            }}
-        }// ZStack
-    } // body: some View
+            }
+        }
+    }
+    
+    private func decreaseIndex() {
+        if index > 0 {
+            index -= 1
+        }
+    }
+    
+    private func increaseIndex() {
+        if index < (vm.history.count - 1) {
+            index += 1
+        }
+    }
+    
+}
+struct DieRollResult: View {
+    let die: Die
+    @StateObject var vm: ViewModel
+    @Binding var index: Int
 
-struct ResultFieldView_Previews: PreviewProvider {
-    static var previews: some View {
-        ResultFieldView()
+    var body: some View {
+        HStack {
+            Image(die.name).resizable().frame(width: 75, height: 75)
+            Text(vm.printDieRolls(historyIndex: index, die: die))
+        }
     }
 }
+
+
+// struct ResultFieldView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ResultFieldView(vm: ViewModel())
+//    }
+// }
